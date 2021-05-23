@@ -1,9 +1,555 @@
-<html>
-  <head>
-    <title>Stress Detector API</title>
-  </head>
-  <body>
-    <h1>Stress Detector API</h1>
-    <img id="bg" src="{{ url_for('predict') }}">
-  </body>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>Stress Detection System using Machine Learning</title>
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="static/images/favicon.png" type="image/png">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="static/css/slick.css">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="static/css/LineIcons.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="static/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="static/css/style.css">
+    
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+   
+    <!--====== PRELOADER PART START ======-->
+
+    <!--<div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== NAVBAR TWO PART START ======-->
+
+    <section class="navbar-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                       
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item active"><a class="page-scroll" href="#home">home</a></li>
+                                
+                                <li class="nav-item"><a class="page-scroll" href="#services">Predict Stress</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#pricing">About Stress</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#suggestions">Suggestions to manage Stress</a></li>
+                                
+                                
+                                
+                            </ul>
+                        </div>
+                        
+                        <!--<div class="navbar-btn d-none d-sm-inline-block">
+                            <ul>
+                                <li><a class="solid" href="#">Download</a></li>
+                            </ul>
+                        </div>-->
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== NAVBAR TWO PART ENDS ======-->
+    
+    <!--====== SLIDER PART START ======-->
+
+    <section id="home" class="slider_area">
+        <div id="carouselThree" class="carousel slide" data-ride="carousel">
+            <!--<ol class="carousel-indicators">
+                <li data-target="#carouselThree" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselThree" data-slide-to="1"></li>
+                <li data-target="#carouselThree" data-slide-to="2"></li>
+            </ol>-->
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Stress Detection System</h1>
+                                    <!--<p class="text">We collect images from various places in our 
+                                    organization and performs image processing to detect stress. </p>-->
+                                    <!--<ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
+                                        
+                                    </ul>-->
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <!--<div class="slider-image-box d-none d-lg-flex align-items-end">-->
+                        <!--<div class="slider-image">
+                            <img src="assets/images/slider/stress-1.jpg" alt="Hero">
+                        </div>  slider-imgae 
+                    </div>  slider-imgae box -->
+                </div> <!-- carousel-item -->
+
+
+                <!--<div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Based on Bootstrap 4</h1>
+                                    <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
+                                        
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="assets/images/slider/3.png" alt="Hero">
+                        </div> 
+                    </div> 
+                </div> carousel-item -->
+            </div>
+
+            <!--<a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+                <i class="lni lni-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+                <i class="lni lni-arrow-right"></i>
+            </a>-->
+        </div>
+    </section>
+
+    <!--====== SLIDER PART ENDS ======-->
+    
+    <!--====== FEATRES TWO PART START ======-->
+
+    <section id="services" class="features-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-10">
+                        <h3 class="title">Predict Your Stress</h3>
+                        <p class="text">Here we collect your images and using image processing
+                        we will predict your stress levels.</p>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">About Stress</a></h4>
+                            <div >
+                                
+                                <img class="shape" src="static/images/stress-logo-4.gif" width="150" height="110" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Stress is a feeling of emotional or physical tension. It can come from any event or thought that makes you feel frustrated, angry, or nervous.
+
+                        </p>
+                                <center><ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one features-btn" href="#pricing">More Info.</a></li>
+                                        
+                                    </ul>
+                                    </center>
+                            
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Predict Stress</a></h4>
+                            <div >
+                                <img class="shape" src="static/images/stress-logo-3.png" width="150" height="110" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Here we will predict your stress based on your facial expressions in different images using machine learning and image processing.</p>
+                            <center><ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one features-btn" href="link">Predict Stress.</a></li>
+                                        
+                                    </ul>
+                                    </center>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Suggestions</a></h4>
+                            <div >
+                     
+                                <img class="shape" src="static/images/suggestions-1.png" height="110" width="100" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Here we will provide some useful suggestions to manage stress.Everyone must follow this suggestions for good health.</p>
+                            <br>
+                            <center><ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one features-btn page-scroll" href="#suggestions">View Suggestions.</a></li>
+                                        
+                                    </ul>
+                                    </center>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+  
+
+    <section id="pricing" class="features-area ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-25">
+                        <h3 class="title">About Stress</h3>
+                        <br><br>
+                        <p class="text">
+                        Stress is a feeling of emotional or physical tension. It can come from 
+                        any event or thought that makes you feel frustrated, angry, or nervous.
+                        Stress is your body's reaction to a challenge or demand. In short bursts, 
+                        stress can be positive, such as when it helps you avoid danger or meet a
+                        deadline. But when stress lasts for a long time, it may harm your health.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="pricing-style mt-30">
+                        <div class="pricing-icon text-center">
+                            <h5>Actual Stress</h5>
+                            <br><br>
+                            <p>
+                                This is short-term stress that goes away quickly. You feel it when you slam on the brakes, have a fight with your partner, or ski down a steep slope. It helps you manage dangerous situations. 
+
+                             </p>
+                             <p>   It also occurs when you do something new,exciting or important work. All people have acute stress at one time or another.
+                            </p>
+        
+                        </div>
+                        <!--<div class="pricing-header text-center">
+                            <h5 class="sub-title">Basic</h5>
+                            <p class="month"><span class="price">$ 199</span>/month</p>
+                        </div>-->
+                        <!--<div class="pricing-list">
+                            <ul>
+                                <li><i class="lni lni-check-mark-circle"></i> Carefully crafted components</li>
+                                <li><i class="lni lni-check-mark-circle"></i> Amazing page examples</li>
+                            </ul>
+                        </div>-->
+                        <div class="pricing-btn rounded-buttons text-center">
+                            <a class="main-btn rounded-one" href="https://en.wikipedia.org/wiki/Stress_management">More Info.</a>
+                        </div>    
+                    </div> <!-- pricing style one -->
+                </div>
+                
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="pricing-style mt-30">
+                        <div class="pricing-icon text-center">
+                            <h5>
+                                Chronic Stress
+                            </h5>
+                            <br><br>
+                            <p>
+                                 This is stress that lasts for a longer period of time. You may have chronic stress if you have money problems, an unhappy marriage, or trouble at work. Any type of stress that goes on for weeks or months is chronic stress. You can become so used to chronic stress that you don't realize it is a problem. If you don't find ways to manage stress, it may lead to health problems. 
+                            </p>
+                            
+                        </div>
+                        
+                        
+                        <div class="pricing-btn rounded-buttons text-center">
+                            <a class="main-btn rounded-one" href="https://en.wikipedia.org/wiki/Stress_management">More Info</a>
+                        </div>
+                    </div> <!-- pricing style one -->
+                </div>
+                
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="pricing-style mt-30">
+                        <div class="pricing-icon">
+                            <h5>
+                                Signs of too much Stress
+                            </h5>
+                            <br><br>
+                            <p><ol type="1">
+                                    <li>Diarrhea or constipation</li>
+                                    <li>Forgetfulness</li>
+                                    <li>Frequent aches and pains</li>
+                                    <li>Headaches</li>
+                                    <li>Lack of energy or focus</li>
+                                    <li>Stiff jaw or neck</li>
+                                    <li>Tiredness</li>
+                                    <li>Trouble sleeping or sleeping too much</li>
+                                    <li>Upset stomach</li>
+                                    <li>Use of alcohol or drugs to relax</li>
+                                    
+                                </ol> 
+                            </p>
+                        </div>
+                        
+                        <div class="pricing-btn rounded-buttons text-center">
+                            <a class="main-btn rounded-one" href="https://en.wikipedia.org/wiki/Stress_management">More Info.</a>
+                        </div>
+                    </div> <!-- pricing style one -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== PRINICNG ENDS ======-->
+    
+    <!--====== ABOUT PART START ======-->
+
+    <section id="suggestions" class="about-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="faq-content mt-45">
+                        <div class="about-title">
+                            <h6 class="sub-title">Suggestions to manage and reduce stress</h6>
+                            <!--<h4 class="title">Frequently Asked Questions <br> About Our Site</h4>-->
+                        </div> <!-- faq title -->
+                        <div class="about-accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Exercise</a>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Working out regularly is one of the best ways to relax your body and mind. Plus, exercise will improve your mood. But you have to do it often for it to pay off.</p>
+
+                                            <p>So how much should you exercise every week?</p>
+
+                                            <p>Work up to 2 hours and 30 minutes of moderately intense exercise like brisk walks or 75 minutes of a more vigorous exercise like swimming laps, jogging or other sports.
+
+                                            Focus on setting fitness goals you can meet so you don’t give up. Most of all remember that doing any exercise is better than none at all.</p>
+                                        </div>
+                                    </div> 
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Relax Your Muscles</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">When you’re stressed, your muscles get tense. You can help loosen them up on your own and refresh your body by:
+                                                <ul>
+                                                    <li>Stretching</li>
+                                                    <li>Enjoying a massage</li>
+                                                    <li>Taking a hot bath or shower</li>
+                                                    <li>Getting a good night’s sleep</li>
+                                            </ul>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Eat Well</a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Eating a regular, well-balanced diet will help you feel better in general. It may also help control your moods. Your meals should be full of vegetables, fruit, whole grains, and lean protein for energy. And don’t skip any. It’s not good for you and can put you in a bad mood, which can actually increase your stress.</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFore">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">Take a Break</a>
+                                    </div>
+                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">You need to plan on some real downtime to give your mind time off from stress. If you’re a person who likes to set goals, this may be hard for you at first. But stick with it and you’ll look forward to these moments. Restful things you can do include:
+                                                <ul>
+
+                                                    <li>Meditation</li>
+                                                    <li>Yoga</li>
+                                                    <li>Tai chi</li>
+                                                    <li>Prayer</li>
+                                                    <li>Listening to your favorite music</li>
+                                                    <li>Spending time in nature</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Talk About Your Problems</a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">If things are bothering you, talking about them can help lower your stress. You can talk to family members, friends, a trusted clergyman, your doctor, or a therapist.</p>
+
+                                            <p>And you can also talk to yourself. It’s called self-talk and we all do it. But in order for self-talk to help reduce stress you need to make sure it’s positive and not negative.</p>
+
+                                            <p>So listen closely to what you’re thinking or saying when you’re stressed out. If you’re giving yourself a negative message, change it to a positive one. For example, don’t tell yourself “I can’t do this.” Tell yourself instead: “I can do this,” or “I’m doing the best I can.”</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingSix">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Go Easy On Yourself</a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Accept that you can’t do things perfectly no matter how hard you try. You also can’t control everything in your life. So do yourself a favor and stop thinking you can do so much. And don’t forget to keep up your sense of humor. Laughter goes a long way towards making you feel relaxed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingSeven">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">Eliminate Your Triggers</a>
+                                    </div>
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Figure out what are the biggest causes of stress in your life. Is it your job, your commute, your schoolwork? If you’re able to identify what they are, see if you’re able to eliminate them from your life, or at least reduce them.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingEight">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">Slow Down</a>
+                                    </div>
+                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Modern life is so busy, and sometimes we just need to slow down and chill out. Look at your life and find small ways you can do that. For example:
+                                            <ul>
+                                            <li>Set your watch 5 to 10 minutes ahead. That way you’ll get places a little early and avoid the stress of being late.</li>
+                                            <li>When you’re driving on the highway, switch to the slow lane so you can avoid road rage.</li>
+                                            <li>Break down big jobs into smaller ones. For example, don’t try to answer all 100 emails if you don’t have to -- just answer a few of them.</li>
+                                        </ul></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- faq accordion -->
+                    </div> <!-- faq content -->
+                </div>
+                
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <section class="footer-area footer-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="footer-logo text-center">
+                        <a class="mt-30" href="index.html"><img src="static/images/stress-logo.jpg" width="70" height="40" alt="Logo"></a>
+                    </div> <!-- footer logo -->
+                    
+                    <div class="footer-support text-center">
+                        <span class="number">Project Guide: M.V.Krishna Reddy, Assistant Professor CBIT</span>
+                        <span class="number">Done by : P Vishnu Vardhan Reddy, K Santhosh</span>
+                        <span class="number"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                          </svg> : +917997216460, +918096477190</span>
+                        <span class="mail"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                          </svg> : pallivishnu4444@gmail.com ,kannesanthosh@gmail.com</span>
+                    </div>
+                    
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->    
+
+    <!--====== PART START ======-->
+
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="static/js/vendor/modernizr-3.7.1.min.js"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="static/js/slick.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    
+    <!--====== Ajax Contact js ======-->
+    <script src="static/js/ajax-contact.js"></script>
+    
+    <!--====== Isotope js ======-->
+    <script src="static/js/imagesloaded.pkgd.min.js"></script>
+    <script src="static/js/isotope.pkgd.min.js"></script>
+    
+    <!--====== Scrolling Nav js ======-->
+    <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/scrolling-nav.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="static/js/main.js"></script>
+    
+</body>
+
 </html>
